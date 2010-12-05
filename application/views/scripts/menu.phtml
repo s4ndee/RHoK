@@ -1,0 +1,9 @@
+			<ul id="tabLeft">
+				<?php if($this->user->id == ""){?>
+					<?php echo $this->render('loginForm.phtml'); ?>
+				<?php } ?>
+				<?php if($this->user->id != ""){?>
+					<li><a class="home_tab_dark" href="<?php echo $this->baseUrl;?>/logout">Logout</a></li>
+				<?php } ?>
+				
+			</ul>

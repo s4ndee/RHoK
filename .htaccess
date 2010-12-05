@@ -1,0 +1,16 @@
+RewriteEngine on
+
+# RewriteRule ^(.*)$ /tikkia2/news/ [L]
+# RewriteCond %{REQUEST_FILENAME} !-s 
+# RewriteCond %{REQUEST_FILENAME} !-l 
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^tikkia2/([0-9]{4})$ /asd/asd?y=$1 [L]
+# RewriteCond %{REQUEST_URI} !^tikkia2/profile/(.*).*
+# RewriteRule ^([0-9]+)/$ user/public?nickname=$1 
+# RewriteCond %{QUERY_STRING} marker
+# RewriteCond ^([a-zA-Z0-9_-]+)$ !^(profile|news|qa)$ [NC] 
+# RewriteRule .* user/public?username=%1&%{QUERY_STRING} [L]
+RewriteCond %{HTTP_HOST} ^www.twirex.com$ [NC]
+RewriteRule ^(.*)$ http://twirex.com/$1 [R=301,L]
+
+RewriteRule !\.(js|ico|gif|jpg|png|css|swf|html|xls|doc|rtf|pdf|txt|ppt|docx|pptx|xlsx|mp3|rss)$ index.php

@@ -1,0 +1,80 @@
+
+
+<?php echo $this->render('header.phtml'); ?>
+
+<table>
+	<tr>
+		<td id="left" class="column">
+			<div class="wrapper" >
+				<div id="register_form">
+					<form method="post" action="" name="register" id="register" onsubmit="return registerValidate()">
+						<div class="error" id="error">
+					      <span><?php echo $this->error; ?></span>
+					    </div> 
+					 
+						<table class="form_table" id="register">
+							<tr>
+								<td colspan="2">
+									<h1>&nbsp;&nbsp;<?php echo $this->escape($this->title); ?></h1>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">
+									Username
+								</td>
+								<td>
+									<input type="text" id="userName" size="45" name="userName" value="<?php echo $this->name; ?>" onblur="validateLength(1,25, this, document.getElementById('userName_help'),'<?php echo VALIDATOR_ERROR_LENGTH_2_25;?>')"/>
+									<span id="userName_help" class="helpSpan"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">Email:</td>
+								<td>
+									<input type="text" id="email" size="45" name="email"  value="<?php echo $this->email;?>"  onblur="validateEmail(this, document.getElementById('email_help'), '<?php echo VALIDATOR_ERROR_EMAIL;?>');"/>
+									<span id="email_help" class="helpSpan"></span>
+									<span id="userLastName_help" class="helpSpan"></span>
+									<p class="note">"We wont use it for spam"</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">Password</td>
+								<td>
+									<input type="password" size="30" name="password"  id="password" onblur="validatePasswordConfirm(2,20, this, document.getElementById('passwordConfirm'),document.getElementById('passwordConfirmation_help'), '<?php echo VALIDATOR_ERROR_LENGTH_2_20;?>', '<?php echo VALIDATOR_PASSWORD_NOT_EQUAL;?>')"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">Password Confirmation</td>
+								<td>
+									<input type="password" size="30" id="passwordConfirm" name="password_confirmation"/  onblur="validatePasswordConfirm(2,20, this, document.getElementById('password'),document.getElementById('passwordConfirmation_help'), '<?php echo VALIDATOR_ERROR_LENGTH_2_20;?>', '<?php echo VALIDATOR_PASSWORD_NOT_EQUAL;?>')">
+									<span id="passwordConfirmation_help" class="helpSpan"></span>
+								</td>
+							</tr>
+							<tr>
+								<td class="label">EULA:</td>
+								<td>
+									<textarea>This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages arising from the use of this software.</textarea>
+								</td>
+							</tr>
+							<tr>
+								<td> &nbsp;</td>
+								<td>	<div class="submit">
+									<span class="button">
+										<button value="<?php echo REGISTER_BUTTON; ?>" name="submit" type="submit"  onclick="registerValidate(this.form);">Agree Eula And Register</button>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				
+				
+			</div>
+		</td>
+	</tr>
+</table>	
+<?php echo $this->render('footer.phtml'); ?>
+
+
+
+

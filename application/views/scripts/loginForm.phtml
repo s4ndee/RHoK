@@ -1,0 +1,21 @@
+<form method="POST" name="login" id="login" action="<?php echo $this->baseUrl;?>/login">
+	<div class="form_row clearfix">
+		<label><b>Please Log in</b><br>Email:</label>
+		<input class="text" type="text" name="login_email" size="20">
+	</div>
+	<div class="form_row clearfix">
+		<label>Password:</label>
+		<input class="password" type="password" name="login_password" size="20">	
+	</div>
+	<div class="form_row clearfix">
+		<label>Remember me</label>
+		<input type="checkbox" name="rememberMe" value="yes" checked>
+	</div>
+	<div class="form_row clearfix">
+	<br>
+		<button id="login_submit_button" type="submit" name="submit" value="Log In" name="submit" id="LoginFormSubmit"><span>Log In</span></button>
+	</div>
+</form>
+<li><a class="home_tab" href="<?php echo $this->baseUrl;?>/register">Register</a></li>
+	
+						
